@@ -4,7 +4,7 @@
 }
 
 .pragmatic_header_button {
-    margin-bottom 2rem;
+    margin-bottom :2rem;
 }
 
 .pragmatic_footer_logo {
@@ -13,5 +13,5 @@
 }
 
 .pragmatic_footer_button {
-    margin-top 1.5rem;
+    margin-top: 1.5rem;
 }

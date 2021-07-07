@@ -2,8 +2,27 @@
 
 {% block content %}
 
+    <style>
+        .testing{
+            background-color: yellow;
+            margin: 1rem;
+            height: 48px;
+            width: 48px;
+            border-radius: .5rem;
+        }
+
+
+    </style>
+
     <div style="height: 10rem; background-color: aqua; margin: 2rem; border-radius: 1rem">
         <h1>Baseball, Soccer, UFC, E-sports</h1>
+
+    <div class="testing" style="display: block">block</div>
+    <div class="testing" style="display: inline">inline</div>
+    <div class="testing" style="display: none">none</div>
+    <div class="testing" style="display: inline-block">inline-block</div>
+    <div class="testing"></div>
+
     </div>
 
 {% endblock %}

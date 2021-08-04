@@ -30,7 +30,7 @@ class ArticleUpdateView(UpdateView):
     model = Article
     form_class = ArticleCreationForm
     context_object_name = 'target_article'
-    template_name = 'articleapp/detail.html'
+    template_name = 'articleapp/update.html'
 
     def get_success_url(self):
         return reverse('articleapp:detail', kwargs={'pk': self.object.pk})

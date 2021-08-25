@@ -28,8 +28,6 @@ def db_transaction(user, article):
         LikeRecord(user=user, article=article).save()
 
 
-
-
 @method_decorator(login_required, 'get')
 class LikeArticleView(RedirectView):
     def get(self, request, *args, **kwargs):

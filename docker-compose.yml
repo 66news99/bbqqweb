@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  django:
+    image: jewon1016_django:1
+    ports:
+      - 8080:8080
+

@@ -2,6 +2,8 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
+RUN echo "adkfjasdlkf"
+
 RUN git clone -b 8/11_3ban_class_commit_1 https://github.com/MrRyuwon/gis_3ban_1.git
 
 WORKDIR /home/gis_3ban_1/
@@ -12,10 +14,8 @@ RUN pip install -r requirements.txt
 
 RUN pip install gunicorn
 
-RUN python manage.py migrate
-
-RUN python manage.py collectstatic
+RUN pip install mysqlclient
 
 EXPOSE 8000
 
-CMD ["gunicorn", "djangoProject2.wsgi", "--bind", "0.0.0.0:8000"]
+CMD ["bash", "-c", "python manage.py collectstatic --noinput --settings=djangoProject2.settings.deploy && python manage.py migrate --settings=djangoProject2.settings.deploy && gunicorn --env DJANGO_SETTINGS_MODULE=djangoProject2.settings.deploy djangoProject2.wsgi --bind 0.0.0.0:8000"]

@@ -35,13 +35,11 @@ services:
       - MARIADB_ROOT_PASSWORD
       - MARIADB_USER
       - MARIADB_PASSWORD
-
     environment:
-      MARIADB_ROOT_PASSWORD: password1234
       MARIADB_DATABASE: django
-      MARIADB_USER: django
-      MARIADB_PASSWORD: password1234
-
+      MARIADB_USER_FILE: /run/secrets/MARIADB_USER
+      MARIADB_PASSWORD_FILE: /run/secrets/MARIADB_PASSWORD
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_ROOT_PASSWORD
 
 networks:
   jewon1016_network:

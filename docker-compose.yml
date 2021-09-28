@@ -14,7 +14,7 @@ services:
       - jewon1016_media:/data/media/
 
   django:
-    image: jewon1016_django:3
+    image: jewon1016_django:5
     networks:
       - jewon1016_network
     volumes:

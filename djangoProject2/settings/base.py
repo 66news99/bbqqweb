@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'projectapp',
     'subscribeapp',
     'likeapp',
+    'analysisapp',
+    'traceapp',
+    'replaceapp',
 ]
 
 from django.contrib.messages import constants as messages

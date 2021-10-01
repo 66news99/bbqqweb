@@ -18,10 +18,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from articleapp.views import ArticleListView
+from mainapp.views import BasicTemplateView
 
 urlpatterns = [
-    path('', ArticleListView.as_view(), name='home'),
+    #path('', ArticleListView.as_view(), name='home'),
+    path('', BasicTemplateView.as_view(), name='home'),
 
     path('admin/', admin.site.urls),
     path('accounts/',include('accountapp.urls')),
@@ -34,5 +35,6 @@ urlpatterns = [
     path('analysis/', include('analysisapp.urls')),
     path('trace/', include('traceapp.urls')),
     path('replace/', include('replaceapp.urls')),
+    path('main/', include('mainapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

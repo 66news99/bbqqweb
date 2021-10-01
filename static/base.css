@@ -1,6 +1,7 @@
 .pragmatic_header_logo {
     margin: 2rem 0;
     font-family: 'Pacifico', cursive;
+    font-size: 5rem;
 }
 
 .pragmatic_header_button {
@@ -64,6 +65,84 @@
     margin: 1rem;
 }
 
+.Progress {
+    display: flex;
+    height: 8px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 1px;
+}
+
+
+.octicon {
+    display: inline-block;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    vertical-align: text-bottom;
+    fill: currentColor;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+.list-style-none {
+    list-style-position: initial !important;
+    list-style-image: initial !important;
+    list-style-type: none !important;
+}
+
+.mr-3 {
+    margin-right: 5px !important;
+}
+
+.mr-2 {
+    margin-right: 8px !important;
+}
+
+.mr-1 {
+    margin-right: 4px !important;
+}
+
+.d-inline{
+    display: inline !important;
+}
+
+.d-inline-flex{
+    display: inline-flex !important;
+}
+
+.flex-items-center {
+    align-items: center !important;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+
+.no-underline {
+    text-decoration-line: none !important;
+    text-decoration-thickness: initial !important;
+    text-decoration-style: initial !important;
+    text-decoration-color: initial !important;
+}
+
+.text-small {
+    font-size: 14px !important;
+}
+
+.analysis_header {
+    text-align: left;
+    font-size: 1.5rem;
+}
 
 @media screen and (max-width: 500px) {
     html {

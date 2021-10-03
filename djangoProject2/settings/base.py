@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'traceapp',
     'replaceapp',
     'mainapp',
+    'contactapp',
 ]
 
 from django.contrib.messages import constants as messages

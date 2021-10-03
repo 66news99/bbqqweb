@@ -36,5 +36,6 @@ urlpatterns = [
     path('trace/', include('traceapp.urls')),
     path('replace/', include('replaceapp.urls')),
     path('main/', include('mainapp.urls')),
+    path('contact/', include('contactapp.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,11 +1,12 @@
 .pragmatic_header_logo {
-    margin: 2rem 0;
+    margin: 1rem 0;
     font-family: 'Pacifico', cursive;
-    font-size: 5rem;
+    font-size: 6rem;
 }
 
 .pragmatic_header_button {
     margin-bottom :2rem;
+    font-size: 1.2rem;
 }
 
 .pragmatic_footer_logo {

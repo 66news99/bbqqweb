@@ -5,51 +5,122 @@
 
 <div class="container">
     <div class="row">
-        <div class="col mx-2" style="background-color: tan; height:50rem; border:4px solid #0a0a0a; border-radius: 1rem">
+        <div class="col mx-2" style="background-color: #FFE16B; height:50rem; border:4px solid #0a0a0a; border-radius: 1rem">
 
             <div class="text-center">
-                <div style="margin-right:5rem; font-size: 3.5rem">SCORE</div>
-                <div style="margin-left:5rem; font-size: 3.5rem">BORED</div>
+                <br>
+                <div style="font-size: 3rem; font-family: 'Gowun Dodum', sans-serif;">SCORE BOARD</div>
+                <br>
             </div>
+            <div></div>
 
-            <h5 style="padding-right:1rem;">
-                2021년 8월 27일 금요일
+            <h5 class="text-right" style="padding-right:1rem;">
+                <input type="date" style="width:15rem; text-align:center; font-family: 'Gowun Dodum', sans-serif;" ><br>
             </h5>
 
-            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:cornflowerblue; height:13rem; border-radius:1rem">
+            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
                 df
             </div>
-            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:cornflowerblue; height:22rem; border-radius:1rem">
+            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:22rem; border-radius:1rem">
                 df
             </div>
 
         </div>
 
-        <div class="col mx-2" style="background-color: tan; height:50rem; border:4px solid #0a0a0a; border-radius: 1rem">
-            <h5 style="margin-top:1rem;">< Today's 판단유보(A유형) ></h5>
-            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:cornflowerblue; height:13rem; border-radius:1rem">
+        <div class="col mx-2" style="background-color: #FFE16B; height:50rem; border:4px solid #0a0a0a; border-radius: 1rem">
+            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 판단유보(A유형) ></h5>
+            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
+                안녕하세요 ^^
+            </div>
+            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 책임회피(B유형) ></h5>
+            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
                 df
             </div>
-            <h5 style="margin-top:1rem;">< Today's 책임회피(B유형) ></h5>
-            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:cornflowerblue; height:13rem; border-radius:1rem">
-                df
-            </div>
-            <h5 style="margin-top:1rem;">< Today's 선정성(C유형) ></h5>
-            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:cornflowerblue; height:13rem; border-radius:1rem">
+            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 선정성(C유형) ></h5>
+            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
                 df
             </div>
         </div>
 
-        <div class="col mx-2" style="background-color: white; height: 50rem;">
-            <div class="row my-2" style="background-color: cornflowerblue; height:24rem; border:4px solid #0a0a0a; border-radius: 1rem;">
-                test
-            </div>
+        <div class="col mx-2" style="height: 50rem;">
 
-            <div class="row my-2" style="background-color: cornflowerblue; height: 24rem; border:4px solid #0a0a0a; border-radius: 1rem">
-                <div class="text-center" style="margin-right:5rem; font-size: 2.5rem">
-                    WINNER BORED
+            <div class="row my-2" style="background-color: #FFE16B; height:24rem; border:4px solid #0a0a0a; border-radius: 1rem;">
+                <div class="text-center" style="font-size:1.3rem; margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">
+                    따옴표 유형을 분석해보세요!
+                    <nav class="navbar navbar-expand-lg">
+                      <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="주소를 입력해주세요." aria-label="Search" style="width:15rem" aria-current="true">
+                            <button class="btn btn-outline-success" type="submit">
+                                <a href="{% url 'mainapp:mainpage' %}" >
+                                    분석 ✔
+                                </a>
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </nav>
+                </div>
+                <div class="col my-2" style="background-color: #EDE8D3; border-top: 4px solid #0a0a0a; width:1rem; height:16.65rem; border-bottom-left-radius:0.6rem; border-bottom-right-radius:0.6rem">
+                    <div style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;" class="text-center">
+                        < &nbsp;유형 분석 결과&nbsp; >
+                        <br><br>"화이자 접종 후 사경 헤매"...백신 부작용 청원 잇따라
+                    </div>
+                    <div class="mb-2" style="font-family: 'Gowun Dodum', sans-serif;">
+                        <br>
+                        <span data-view-component="true"     style="display: flex; height: 1.3rem; overflow-x: hidden;
+                        overflow-y: hidden; border-radius:6px; outline-color: transparent; outline-style: solid; outline-width: 1px;">
+                            <span style="background-color:#3572A5 !important;;width: 11.2%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse">
+                                <div class="text-center" style="font-size:0.8rem; color:white">
+                                    A유형
+                                </div>
+                            </span>
+                            <span style="background-color:#e34c26 !important;;width: 71.5%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse">
+                                <div class="text-center" style="font-size:0.8rem; color:white">
+                                    B유형
+                                </div>
+                            </span>
+                            <span style="background-color:#f1e05a !important;;width: 17.3%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse">
+                                <div class="text-center" style="font-size:0.8rem; color:white">
+                                    C유형
+                                </div>
+                            </span>
+                        </span>
+                    </div>
+                    <div style="margin-top:0.3rem; font-family: 'Gowun Dodum', sans-serif;">
+                        <div class="text-center">
+                            A유형 11.2%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B유형 71.5%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C유형 17.3%<br><br>
+                            ⇒&nbsp;&nbsp; 본 기사는 '책임회피(B유형)' 에 해당됩니다.
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div class="row my-2" style="height: 0.3rem;"></div>
+
+            <div class="row my-2" style="background-color: #FFE16B; height: 24rem; border:4px solid #0a0a0a; border-radius: 1rem">
+                <div class="text-center" style="margin-right:5rem; font-size: 2.5rem; font-family: 'Gowun Dodum', sans-serif;">
+                    WINNER&nbsp; BOARD
+                </div>
+                <div class="text-center" style="font-family: 'Gowun Dodum', sans-serif;">
+                    <a style="font-size:1.2rem">
+                        이 주의 따옴표 주인공은
+                    </a>
+                    <a style="font-size:1.6rem">
+                        <br>'경찰'
+                    </a>
+                    <a style="font-size:1.2rem">
+                        입니다.
+                    </a>
+                </div>
+                <div class="mx-2">
+                    <div class="col" style="background-color: #EDE8D3; width:23rem; height: 13rem; border:3px solid #0a0a0a; border-radius: 1rem">
+                        그래프
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

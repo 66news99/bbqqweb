@@ -160,3 +160,14 @@ a:hover{
     text-decoration: none;
     color: black;
 }
+
+.body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color:#EDE8D3;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}

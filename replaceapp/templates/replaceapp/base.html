@@ -7,24 +7,33 @@
     <div class="container">
         <div style="text-align:center; padding-left:10.5rem">
             <div row>
-                <div class="col my-2" style="font-size:1.5rem; border:3px solid #0a0a0a; margin-top:1rem; width:60rem; height:15rem; border-radius:1rem">
+                <div class="col my-2" style="background-color:#FFE16B; font-family: 'Gowun Dodum',sans-serif; font-size:1.5rem; border:3px solid #0a0a0a; margin-top:1rem; width:60rem; height:15rem; border-radius:1rem">
                     <div style="margin-top:1rem">
+                        <h3>다음 기사 제목의 따옴표를 직접 없애보세요!</h3>
                         <br>
-                        <h4>"화이자 접종 후 사경 헤매"...백신 부작용 靑 청원 잇따라</h4>
+                            <h4>"화이자 접종 후 사경 헤매"...백신 부작용 靑 청원 잇따라</h4>
                         <br>
-                        <form action="/replaceapp/challenge/" method="post">
+                        <form action="/replace/challenge/" method="post">
                             {% csrf_token %}
                             <input type="text" name="input_text" style="width:40rem; margin-left:3rem">
                             <input type="submit" class="btn btn-outline-dark rounded-pill px-3">
                         </form>
                     </div>
                 </div>
-                <div class="col my-2" style="font-size:1.5rem; border:3px solid #0a0a0a; margin-top:1rem; width:60rem; height:15rem; border-radius:1rem">
-                    <br>
-                    {% for data in data_list %}
+                <div class="col my-2" style="background-color:#FFE16B; padding-left:5rem; padding-top:2rem; font-size:1.5rem; border:3px solid #0a0a0a; margin-top:1rem; width:60rem; height:15rem; border-radius:1rem">
+                    <div class="box" style="background-color:white; width:50rem; height:10rem; overflow-y: scroll; ">
+                        <h4 class="text-center" style="font-family: 'Gowun Dodum', sans-serif; line-height:2rem">
+                            화이자 백신 접종에 의한 부작용으로 청원이 잇따랐다.<br>
+                            화이자 백신 접종 후 사경 헤멘 사연으로 청원이 잇따랐다.<br>
+                            백신 접종 부작용에 의해 청원이 잇따랐다.<br>
+                            화이자 접종 부작용으로 청원이 잇따랐다.<br>
+                            백신 부작용 이후 청원이 잇따랐다.
+                        </h4>
+                        {% for data in data_list %}
                         <h3>{{ data.text }}</h3>
-                    {% endfor %}
+                        {% endfor %}
                     <br>
+                    <div>
                 </div>
             </div>
         </div>

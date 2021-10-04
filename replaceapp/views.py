@@ -7,8 +7,8 @@ from django.views.generic import TemplateView
 from replaceapp.models import NewModel
 
 
-def challenge(request):
-    if request.method == "post":
+def let_write(request):
+    if request.method == "POST":
         temp = request.POST.get("input_text")
 
         model_instance = NewModel()
@@ -17,7 +17,7 @@ def challenge(request):
 
         data_list = NewModel.objects.all()
 
-        return HttpResponseRedirect(reverse('replaceapp:challenge'))
+        return HttpResponseRedirect(reverse('replaceapp:let_write'))
     else:
         data_list = NewModel.objects.all()
         return render(request, 'replaceapp/base.html',

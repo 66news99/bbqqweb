@@ -20,52 +20,59 @@
             {# 따옴표지수 #}
             <div class="col my-2" style="font-family: 'Gowun Dodum', sans-serif; border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
                 <div class="text-left" style="padding-left:1rem;">
-                    <a style="font-size:2rem; ">
-                        따옴표 지수
+                    <a style="font-size:1.5rem; ">
+                        오늘의 따옴표 지수&nbsp
                     </a>
-                    <a style="font-size:1.3rem;">
-                        {{ date }}
+                    <a style="font-size:1.1rem;">
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ date }}
                     </a>
                 </div>
-                <div class="text-center" style="padding:1.5rem; font-size:4rem;">
+                <div class="text-center" style="padding:1.5rem; font-size:3rem;">
                     {{ test|floatformat:2 }}%
                 </div>
             </div>
             {# 토픽별 따옴표 지수 #}
-            <div class="col my-2" style="font-size:1.7rem; border: 3px solid #0a0a0a; background-color:#EDE8D3; height:22rem; border-radius:1rem">
+            <div class="col my-2" style="font-size:1.5rem; border: 3px solid #0a0a0a; background-color:#EDE8D3; height:22rem; border-radius:1rem">
+                <div class="text-left" style="padding-left:1rem;">
+                    <a style="font-size:1.5rem; ">
+                       카테고리별 따옴표 지수
+                    </a>
+                    <a style="font-size:1.1rem;">
+                        &nbsp&nbsp&nbsp{{ date }}
+                    </a>
+                </div>
                 <div class="row" style="margin-top:3.5rem">
                     <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
-                        정치: {}
+                        정치: {{ politics }}
                     </div>
                     <div class="col text-center">
-                        국제: {}
+                        국제: {{ world }}
                     </div>
                 </div>
                 <div class="row" style="margin-top:1.2rem">
                     <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
-                        경제: {}
+                        경제: {{ economy }}
                     </div>
                     <div class="col text-center">
-                        문화: {}
+                        사회: {{ social }}
                     </div>
                 </div>
-                <div class="row" style="margin-top:1.2rem">
+                <div class="row" style="margin-top:1rem">
                     <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
-                        사회: {}
+                        스포츠: {{ sports }}
                     </div>
                     <div class="col text-center">
-                        IT_과학: {}
+                        문화: {{ culture }}
                     </div>
                 </div>
-                <div class="row" style="margin-top:1.2rem">
-                    <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
-                        연예: {}
+                <div class="row" style="margin-top:1rem">
+                    <div class="col text-left" style="border-right: 3px solid #0a0a0a;">
+                        &nbsp&nbsp&nbspIT_과학: {{ science }}
                     </div>
-                    <div class="col text-center">
-                        스포츠: {}
-                    </div>
-                </div>
+                    <div class="col text-center"">
 
+                    </div>
+                </div>
             </div>
 
         </div>

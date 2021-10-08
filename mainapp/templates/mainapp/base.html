@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -20,25 +21,25 @@
             {# 따옴표지수 #}
             <div class="col my-2" style="font-family: 'Gowun Dodum', sans-serif; border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
                 <div class="text-left" style="padding-left:1rem;">
-                    <a style="font-size:1.5rem; ">
-                        오늘의 따옴표 지수&nbsp
+                    <a style="font-size: 1.8vw; ">
+                        오늘의 따옴표 지수&nbsp&nbsp
                     </a>
-                    <a style="font-size:1.1rem;">
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ date }}
+                    <a style="font-size: 1.2vw;">
+                        {{ today }}
                     </a>
                 </div>
                 <div class="text-center" style="padding:1.5rem; font-size:3rem;">
-                    {{ test|floatformat:2 }}%
+                    {{ total }}
                 </div>
             </div>
             {# 토픽별 따옴표 지수 #}
-            <div class="col my-2" style="font-size:1.5rem; border: 3px solid #0a0a0a; background-color:#EDE8D3; height:22rem; border-radius:1rem">
+            <div class="col my-2" style="font-family: 'Gowun Dodum', sans-serif; border: 3px solid #0a0a0a; background-color:#EDE8D3; height:22rem; border-radius:1rem">
                 <div class="text-left" style="padding-left:1rem;">
-                    <a style="font-size:1.5rem; ">
-                       카테고리별 따옴표 지수
+                    <a style="font-size: 1.6vw; ">
+                       카테고리별 따옴표 지수&nbsp&nbsp
                     </a>
-                    <a style="font-size:1.1rem;">
-                        &nbsp&nbsp&nbsp{{ date }}
+                    <a style="font-size: 1vw;">
+                        {{ today }}
                     </a>
                 </div>
                 <div class="row" style="margin-top:3.5rem">
@@ -66,10 +67,10 @@
                     </div>
                 </div>
                 <div class="row" style="margin-top:1rem">
-                    <div class="col text-left" style="border-right: 3px solid #0a0a0a;">
+                    <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
                         &nbsp&nbsp&nbspIT_과학: {{ science }}
                     </div>
-                    <div class="col text-center"">
+                    <div class="col text-center">
 
                     </div>
                 </div>
@@ -80,15 +81,37 @@
         <div class="col mx-2" style="background-color: #FFE16B; height:50rem; border:4px solid #0a0a0a; border-radius: 1rem">
             <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 판단유보(A유형) ></h5>
             <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
-                안녕하세요 ^^
+                 <span class="mx-2">
+                    <a href="{% url 'traceapp:group' %}">
+                        해부!따옴표!
+                    </a>
+                 </span>
+                <p>검찰 "수사팀 불찰 송구...경찰 분석에 적극 협력"</p>
+                <p>국감 나온 남양유업 회장 "바지사장" 질타에 "몰랐다"</p>
+                <p>카카오모빌리티 "스마트호출 이어 프로멤버십도 폐지 검토"</p>
             </div>
+
             <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 책임회피(B유형) ></h5>
             <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
-                df
+                 <span class="mx-2">
+                    <a href="{% url 'traceapp:group' %}">
+                        해부!따옴표!
+                    </a>
+                 </span>
+                <p>북한군 피격 공무원 유족 "직접 챙기겠다는 대통령 약속 잊었나"</p>
+                <p>與, 최재형 탈락에 맹비난...원희룡 "사과하라"</p>
+                <p>與 정청래, 최재형에 "다시는 정치권 기웃 말라"</p>
             </div>
             <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 선정성(C유형) ></h5>
             <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
-                df
+                 <span class="mx-2">
+                    <a href="{% url 'traceapp:group' %}">
+                        해부!따옴표!
+                    </a>
+                 </span>
+                <p>한국어로 "무궁화 꽃이 피었습니다"···경찰까지 딱 멈춘 여긴···</p>
+                <p>국힘 4강 승자는 '화천대유 1타강사' 원희룡… "이재명 민낯 드러낼 것"</p>
+                <p>홍수 피해 입었지만 대박 난 태국 식당 "물 튀어도 좋아"</p>
             </div>
         </div>
 
@@ -162,7 +185,7 @@
                         이 주의 따옴표 주인공은
                     </a>
                     <a style="font-size:1.6rem">
-                        <br>'경찰'
+                        <br>{{ top }}
                     </a>
                     <a style="font-size:1.2rem">
                         입니다.
@@ -170,11 +193,15 @@
                 </div>
                 <div class="mx-2">
                     <div class="col" style="background-color: #EDE8D3; width:23rem; height: 13rem; border:3px solid #0a0a0a; border-radius: 1rem">
-                        그래프
+                        <img src="{% static 'img/top.jpg' %}"
+                             style="width: 100%;
+                                    height: 100%;
+                                    border-radius: 1rem;
+                                    object-fit: cover;"
+                         >
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

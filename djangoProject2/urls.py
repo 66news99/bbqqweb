@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from mainapp.views import BasicTemplateView
+from analysisapp.views import BasicTemplateView
 
 urlpatterns = [
     #path('', ArticleListView.as_view(), name='home'),

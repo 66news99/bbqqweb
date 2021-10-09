@@ -12,15 +12,20 @@ import numpy as np
 from selenium import webdriver
 from bs4 import BeautifulSoup as soup
 import time
-
+import datetime
 
 cwd = os.getcwd()
 
 def News_category():
+    today = datetime.datetime.now()
+    yesterday = today - datetime.timedelta(1)
+    yesterday = yesterday.strftime("%Y%m%d")
+
     t = time.time()
     today = time.strftime("%Y-%m-%d", time.gmtime(t))
-    date1 = str(int(today[:4]+today[5:7]+today[8:]) - 1)
-    yesterday = date1[:4] + '-' + date1[4:6] + '-' + date1[6:]
+
+    yesterday = yesterday[:4] + '-' + yesterday[4:6] + '-' + yesterday[6:]
+    date1 = str(int(yesterday[:4] + yesterday[5:7] + yesterday[8:]) - 1)
     category = ["정치", "경제", "사회", "국제", "문화", "스포츠", "IT_과학",""]
     per_res = {}
 

@@ -7,10 +7,10 @@ from django.views.generic import TemplateView
 from replaceapp.models import NewModel
 
 
+
 def let_write(request):
     if request.method == "POST":
         temp = request.POST.get("input_text")
-
         model_instance = NewModel()
         model_instance.text = temp
         model_instance.save()

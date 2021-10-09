@@ -1,6 +1,8 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from django.urls import reverse
 from django.views.generic import TemplateView
 import requests
 import json
@@ -9,92 +11,20 @@ import os
 import numpy as np
 from selenium import webdriver
 from bs4 import BeautifulSoup as soup
+import time
+
+
 cwd = os.getcwd()
 
-
-
-# def News_data():
-#     #자신의 api 키를 입력해서 사용해주세요!
-#     my_key = "a19a4199-9fe3-4dff-90ed-6512bb359f2b"
-#
-#     # result_url에 따라 인용문이나 그날의 뉴스 순위등을 설정할수있으니 사용자 지침서를 꼭 보셔야해요!
-#     result_url = 'http://tools.kinds.or.kr:8888/search/news'
-#     data = {
-#         "access_key": f"{my_key}",
-#         "argument": {
-#             "query":"",
-#             "published_at": {
-#                 "from": "2021-10-05", #이전에는 관련 기사 없음 확인
-#                 "until": "2021-10-06"
-#             },
-#             "provider": [
-#                 ""
-#             ],
-#             "category": [
-#                 ""
-#             ],
-#             "category_incident": [
-#                  ""
-#             ],
-#             "byline": "",
-#             "provider_subject": [
-#                 ""
-#             ],
-#             "subject_info": [
-#                 ""
-#             ],
-#             "subject_info1": [
-#                 ""
-#             ],
-#             "subject_info2": [
-#                 ""
-#             ],
-#             "subject_info3": [
-#                 ""
-#             ],
-#             "subject_info4": [
-#                 ""
-#             ],
-#             "sort": {
-#                 "date": "desc"
-#             },
-#             "hilight": 200,
-#             "return_from": 0,
-#             "return_size": 20000, #총 힛이 2133입니다
-#             "fields": [
-#                 "hilight",
-#                 "byline",
-#                 "category",
-#                 "category_incident",
-#                 "images",
-#                 "provider_subject",
-#                 "subject_info",
-#                 "provider_news_id",
-#                 "publisher_code"
-#             ]
-#         }
-#     }
-#
-#     dated = data['argument']['published_at']['from']
-#
-#     response = requests.post(result_url, data=json.dumps(data))
-#     res_json = response.json()
-#     res_doc = res_json['return_object']['documents']
-#     res_title = [i['title'] for i in res_doc]
-#     my_ex = '"'
-#     sen_res = []
-#     for sen in res_title:
-#         if re.search(my_ex, sen):
-#             sen_res.append(sen)
-#     return((len(sen_res)/len(res_title))*100, dated)
-
 def News_category():
+    t = time.time()
+    today = time.strftime("%Y-%m-%d", time.gmtime(t))
+    date1 = str(int(today[:4]+today[5:7]+today[8:]) - 1)
+    yesterday = date1[:4] + '-' + date1[4:6] + '-' + date1[6:]
     category = ["정치", "경제", "사회", "국제", "문화", "스포츠", "IT_과학",""]
     per_res = {}
-    date = str(20211005)
-    today = date[:4] + '-' + date[4:6] + '-' + date[6:]
-    date1 = str(int(date) + 1)
-    tomorrow = date1[:4] + '-' + date1[4:6] + '-' + date1[6:]
+
+
 
     my_key = "a19a4199-9fe3-4dff-90ed-6512bb359f2b"
 
@@ -105,8 +35,8 @@ def News_category():
             "argument": {
                 "query": "",
                 "published_at": {
-                    "from": today,
-                    "until": tomorrow
+                    "from": yesterday,
+                    "until": today
                 },
                 "provider": [""],
                 "category": [category[i]],
@@ -154,7 +84,7 @@ def News_category():
     sports = per_res['스포츠']
     science = per_res['IT_과학']
     total = per_res['']
-    return [politics,economy,social,world,culture,sports,science,total,today]
+    return [politics,economy,social,world,culture,sports,science,total,yesterday]
 
 def search_selenium(search_name):
     search_url = "https://www.google.com/search?q=" + str(search_name) + "&hl=ko&tbm=isch"
@@ -175,12 +105,11 @@ def search_selenium(search_name):
     return image_loc
 
 def weekly_keyword():
-    date = '20210929'
-    # per = int(input("조회할 기간 : "))
-    today = date[:4] + '-' + date[4:6] + '-' + date[6:]
-    date1 = str(int(date) + 7)
-    target_date = date1[:4] + '-' + date1[4:6] + '-' + date1[6:]
-
+    t = time.time()
+    today = time.strftime("%Y-%m-%d", time.gmtime(t))
+    date1 = str(int(today[:4]+today[5:7]+today[8:]) - 7)
+    lastday = date1[:4] + '-' + date1[4:6] + '-' + date1[6:]
+    date = today[:4]+'년'+today[5:7]+'월'+today[8:]+'일'
     my_key = "a19a4199-9fe3-4dff-90ed-6512bb359f2b"
 
     result_url = 'http://tools.kinds.or.kr:8888/search/news'
@@ -190,8 +119,8 @@ def weekly_keyword():
         "argument": {
             "query": "",
             "published_at": {
-                "from": today,
-                "until": target_date
+                "from": lastday,
+                "until": today
             },
             "provider": [""],
             "category": [""],
@@ -284,10 +213,12 @@ def weekly_keyword():
     top = final[0][1]
     im_loc = search_selenium(top)
 
-    return [top,im_loc]
+    return [top,im_loc,date]
 
 class BasicTemplateView(TemplateView):
     template_name = 'mainapp/base.html'
+
+
 
     def get(self, request, *args, **kwargs):
         # kwargs['test'] = News_data()[0]
@@ -300,8 +231,9 @@ class BasicTemplateView(TemplateView):
         kwargs['sports'] = News_category()[5]
         kwargs['science'] = News_category()[6]
         kwargs['total'] = News_category()[7]
-        kwargs['today'] = News_category()[8]
+
         kwargs['top'] = weekly_keyword()[0]
         kwargs['image_loc'] = weekly_keyword()[1]
+        kwargs['today'] = weekly_keyword()[2]
         return super().get(request, *args, **kwargs)
 

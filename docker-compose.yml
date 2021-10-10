@@ -9,7 +9,7 @@ services:
     networks:
       - bbqq_network
     volumes:
-      - /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf
+      - /home/quotation6699/nginx.conf:/etc/nginx/nginx.conf
       - bbqq_static:/data/static/
       - bbqq_media:/data/media/
     secrets:
@@ -20,8 +20,8 @@ services:
     networks:
       - bbqq_network
     volumes:
-      - bbqq_static:/home/gis_3ban_1/staticfiles/
-      - bbqq_media:/home/gis_3ban_1/media/
+      - bbqq_static:/home/quotation6699/staticfiles/
+      - bbqq_media:/home/quotation6699/media/
     secrets:
       - DJANGO_SECRET_KEY
       - MARIADB_USER
@@ -59,4 +59,6 @@ secrets:
   MARIADB_USER:
     external: true
   MARIADB_PASSWORD:
+    external: true
+  NGINX_AUTH:
     external: true

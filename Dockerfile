@@ -8,7 +8,7 @@ RUN git clone https://github.com/hale-in/bbqqweb
 
 WORKDIR /home/bbqqweb/
 
-#RUN echo "SECRET_KEY=django-insecure-y*7(@vu)z_q$qmc5tee=dbuo$5f(!$rf@n)vsgfkipumfu(jp+" > .env
+#RUN echo "SECRET_KEY=django-insecure-y*7(@vu)z_q$qmc5tee=bbqqqutation6699" > .env
 
 RUN pip install -r requirements.txt
 

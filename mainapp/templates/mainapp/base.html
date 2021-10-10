@@ -16,19 +16,17 @@
             {# 달력 #}
             <h4 class="text-center" style="padding-right:1rem;">
                 <a style="font-size: 1.8vw; ">
-                    {{ today }}
+                    {{ yesterday }}
                 </a>
             </h4>
 
             {# 따옴표지수 #}
             <div class="col my-2" style="font-family: 'Gowun Dodum', sans-serif; border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
-                <div class="text-left" style="padding-left:1rem;">
+                <div class="text-center" style="padding-left:1rem;">
                     <a style="font-size: 1.8vw; ">
-                        오늘의 따옴표 지수&nbsp&nbsp
+                        전체 뉴스의 따옴표 지수
                     </a>
-                    <a style="font-size: 1.2vw;">
-                        {{ today }}
-                    </a>
+
                 </div>
                 <div class="text-center" style="padding:1.5rem; font-size:3rem;">
                     {{ total }}
@@ -36,15 +34,12 @@
             </div>
             {# 토픽별 따옴표 지수 #}
             <div class="col my-2" style="font-family: 'Gowun Dodum', sans-serif; border: 3px solid #0a0a0a; background-color:#EDE8D3; height:22rem; border-radius:1rem">
-                <div class="text-left" style="padding-left:1rem;">
-                    <a style="font-size: 1.6vw; ">
-                       카테고리별 따옴표 지수&nbsp&nbsp
-                    </a>
-                    <a style="font-size: 1vw;">
-                        {{ today }}
+                <div class="text-center" style="padding-left:1rem;">
+                    <a style="font-size: 1.8vw; ">
+                       카테고리별 따옴표 지수
                     </a>
                 </div>
-                <div class="row" style="margin-top:3.5rem">
+                <div class="row" style="margin-top:3.5rem; font-size: 1.4vw;">
                     <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
                         정치: {{ politics }}
                     </div>
@@ -52,7 +47,7 @@
                         국제: {{ world }}
                     </div>
                 </div>
-                <div class="row" style="margin-top:1.2rem">
+                <div class="row" style="margin-top:1.2rem; font-size: 1.4vw;">
                     <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
                         경제: {{ economy }}
                     </div>
@@ -60,7 +55,7 @@
                         사회: {{ social }}
                     </div>
                 </div>
-                <div class="row" style="margin-top:1rem">
+                <div class="row" style="margin-top:1rem; font-size: 1.4vw;">
                     <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
                         스포츠: {{ sports }}
                     </div>
@@ -68,9 +63,9 @@
                         문화: {{ culture }}
                     </div>
                 </div>
-                <div class="row" style="margin-top:1rem">
+                <div class="row" style="margin-top:1rem; font-size: 1.3vw;">
                     <div class="col text-center" style="border-right: 3px solid #0a0a0a;">
-                        &nbsp&nbsp&nbspIT_과학: {{ science }}
+                        IT_과학: {{ science }}
                     </div>
                     <div class="col text-center">
 
@@ -81,39 +76,26 @@
         </div>
 
         <div class="col mx-2" style="background-color: #FFE16B; height:50rem; border:4px solid #0a0a0a; border-radius: 1rem">
-            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 판단유보(A유형) ></h5>
-            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
-                 <span class="mx-2">
-                    <a href="{% url 'traceapp:group' %}">
-                        해부!따옴표!
-                    </a>
-                 </span>
-                <p>검찰 "수사팀 불찰 송구...경찰 분석에 적극 협력"</p>
-                <p>국감 나온 남양유업 회장 "바지사장" 질타에 "몰랐다"</p>
-                <p>카카오모빌리티 "스마트호출 이어 프로멤버십도 폐지 검토"</p>
+            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< 어제의 판단유보 ></h5>
+            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem; padding:.3rem;">
+                <p>{{ a0 }}</p>
+                <p>{{ a1 }}</p>
+                <p>{{ a2 }}</p>
             </div>
 
-            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 책임회피(B유형) ></h5>
-            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
-                 <span class="mx-2">
-                    <a href="{% url 'traceapp:group' %}">
-                        해부!따옴표!
-                    </a>
-                 </span>
-                <p>북한군 피격 공무원 유족 "직접 챙기겠다는 대통령 약속 잊었나"</p>
-                <p>與, 최재형 탈락에 맹비난...원희룡 "사과하라"</p>
-                <p>與 정청래, 최재형에 "다시는 정치권 기웃 말라"</p>
+            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< 어제의 책임회피 ></h5>
+            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem; padding:.3rem;">
+
+                <p>{{ b0 }}</p>
+                <p>{{ b1 }}</p>
+                <p>{{ b2 }}</p>
             </div>
-            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< Today's 선정성(C유형) ></h5>
-            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem">
-                 <span class="mx-2">
-                    <a href="{% url 'traceapp:group' %}">
-                        해부!따옴표!
-                    </a>
-                 </span>
-                <p>한국어로 "무궁화 꽃이 피었습니다"···경찰까지 딱 멈춘 여긴···</p>
-                <p>국힘 4강 승자는 '화천대유 1타강사' 원희룡… "이재명 민낯 드러낼 것"</p>
-                <p>홍수 피해 입었지만 대박 난 태국 식당 "물 튀어도 좋아"</p>
+            <h5 class="text-center" style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;">< 어제의 선정주의 ></h5>
+            <div class="col my-2" style="border: 3px solid #0a0a0a; background-color:#EDE8D3; height:13rem; border-radius:1rem; padding:.3rem;">
+
+                <p>{{ c0 }}</p>
+                <p>{{ c1 }}</p>
+                <p>{{ c2 }}</p>
             </div>
         </div>
 
@@ -126,7 +108,7 @@
                       <div class="container-fluid">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="주소를 입력해주세요." aria-label="Search" style="width:15rem" aria-current="true">
+                            <input class="form-control me-2" type="search" placeholder="타이틀을 입력해주세요." aria-label="Search" style="width:15rem" aria-current="true">
                             <button class="btn btn-outline-success" type="submit">
                                 <a href="{% url 'mainapp:mainpage' %}" >
                                     분석 ✔
@@ -139,11 +121,9 @@
                 </div>
                 <div class="col my-2" style="background-color: #EDE8D3; border-top: 4px solid #0a0a0a; width:1rem; height:16.65rem; border-bottom-left-radius:0.6rem; border-bottom-right-radius:0.6rem">
                     <div style="margin-top:1rem; font-family: 'Gowun Dodum', sans-serif;" class="text-center">
-                        <div style="font-size:1.5rem;">
-                            < &nbsp;유형 분석 결과&nbsp; >
-                        </div>
+
                         <div style="background-color: #a2d7c7">
-                        <br>"화이자 접종 후 사경 헤매"...백신 부작용 청원 잇따라
+                        "화이자 접종 후 사경 헤매"...백신 부작용 청원 잇따라
                         </div>
                     </div>
                     <div class="mb-2" style="font-family: 'Gowun Dodum', sans-serif;">
@@ -170,8 +150,15 @@
                     <div style="margin-top:0.3rem; font-family: 'Gowun Dodum', sans-serif;">
                         <div class="text-center">
                             A유형 11.2%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B유형 71.5%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C유형 17.3%<br><br>
-                            ⇒&nbsp;&nbsp; 본 기사는 '책임회피(B유형)' 에 해당됩니다.
+                            ⇒&nbsp;&nbsp; 본 기사는 '책임회피(B유형)' 에 해당됩니다.<hr>
                         </div>
+                    </div>
+                    <div style="margin-top:1rem; font-size:1.5rem; font-family: 'Gowun Dodum', sans-serif;" class="text-center">
+                         <span class="mx-1">
+                            <a href="{% url 'traceapp:group' %}">
+                                < 어제 뉴스 분석 결과&nbsp; >
+                            </a>
+                         </span>
                     </div>
                 </div>
             </div>

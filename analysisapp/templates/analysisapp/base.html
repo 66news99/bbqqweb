@@ -5,25 +5,33 @@
 
     <style>
     .test{
-        background-image: url("{% static 'img/6699sample.jpg' %}");
-        background-size: 60rem;
-        height: 43rem;
-        width: 60rem;
+        background-image: url("{% static 'img/6699bbqq.jpg' %}");
+        background-size: 90rem;
+        height: 50rem;
+        width: 90rem;
         margin: 0 auto;
     }
     </style>
 
-    <div class="col text-left test">
-        <div class="analysis_header text-center" style="padding-top: 1rem; font-size:3rem; font-family: 'Gowun Dodum', sans-serif;">
-          따옴표 저널리즘이란?
+        <div class="analysis_header">
+            <form action="/analysis/let_write/" method="post" class="text-center">
+                {% csrf_token %}
+                <input type="submit" name="input_text1" value="따옴표 저널리즘이란?" class="btn btn-outline rounded-pill px-3" style="box-shadow:0 1px 20px 0 rgba(0,0,0,0.1); font-size:2rem; font-family: 'Gowun Dodum', sans-serif;">
+                &nbsp;
+                <input type="submit" name="input_text2" value="따옴표가 있는 헤드라인에 초점을 맞춘 이유" class="btn btn-outline rounded-pill px-3" style="box-shadow:0 1px 20px 0 rgba(0,0,0,0.1); font-size:2rem; font-family: 'Gowun Dodum', sans-serif;">
+                &nbsp;
+                <input type="submit" name="input_text3" value="따옴표 저널리즘 3가지 유형 분류" class="btn btn-outline rounded-pill px-3" style="box-shadow:0 1px 20px 0 rgba(0,0,0,0.1); font-size:2rem; font-family: 'Gowun Dodum', sans-serif;">
+            </form>
         </div>
-        <div style="padding:7rem; font-size:1.5rem; font-family: 'Gowun Dodum', sans-serif; line-height:3rem">
-            안녕하세요. 저희는 광주 인공지능 사관학교 66.99 팀입니다.<br>
-            따옴표 저널리즘의 ‘숲’을 보여주는 서비스를 개발코자 합니다.<br>
-            따옴표 저널리즘에 대한 연구 및 비판은 ‘나무’를 통해만 이루어졌습니다.<br>
-            저희는 헤드라인의 특정 단어나 문맥을 분석해 해당 기사에서 드러나는 따옴표 저널리즘의 유형을 찾는 형태로 구성했습니다.<br>
-            쌍따옴표의 사용이 얼마나 일상적으로 이루어지고 있는지를 확인하실 수 있습니다.
+
+        <div class="col text-left test" >
+            <div style="padding:11rem 8rem; font-size:1.5rem; font-family: 'Gowun Dodum', sans-serif; line-height:3rem">
+                {{ text }}<br>
+                {{ text2 }}<br>
+                {{ text3 }}<br>
+                {{ text4 }}
+            </div>
         </div>
-    </div>
+
 
 {% endblock %}

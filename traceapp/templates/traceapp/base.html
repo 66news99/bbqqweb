@@ -18,7 +18,7 @@
                     <span style="background-color:white !important;;width: 33.3%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
                     <span style="background-color:white !important;;width: 33.3%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
                 </span>
-                <span>&nbsp;판단유보 A형</span>
+                <span>&nbsp;판단유보 유형</span>
             </div>
             <h1></h1>
             <div class="text-center">
@@ -27,7 +27,7 @@
                     <span style="background-color:#e34c26 !important;;width: 33.3%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
                     <span style="background-color:white !important;;width: 33.3%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
                 </span>
-                <span>책임회피 B형</span>
+                <span>책임회피 유형</span>
             </div>
             <h1></h1>
             <div class="text-right">
@@ -36,7 +36,7 @@
                     <span style="background-color:white !important;;width: 33.3%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
                     <span style="background-color:#f1e05a !important;;width: 33.3%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
                 </span>
-                <span>선정성 C형&nbsp;&nbsp;&nbsp;</span>
+                <span>선정주의 유형</span>
             </div>
             <h1></h1>
         </div>
@@ -44,51 +44,52 @@
     <div class="col mx-2" style="background-color: thistle; height: 10rem; border-radius:1rem">
         <div class="row my-2" style="background-color: plum; height: 1.5rem; border-radius:1rem">
             <div class="text-center">
-                < 판단유보 A형 >
+                {{ label0 }}
             </div>
         </div>
         <div>
-            국감 나온 남양유업 회장 "바지사장" 질타에 "몰랐다"
+            {{ sen0 }}<br>
         </div>
         <div class="mb-2">
             <span data-view-component="true" class="Progress">
-                <span style="background-color:#3572A5 !important;;width: 71.6%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#e34c26 !important;;width: 1.8%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#f1e05a !important;;width: 26.6%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#3572A5 !important;;width: {{ pred000 }}%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#e34c26 !important;;width: {{ pred001 }}%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#f1e05a !important;;width: {{ pred002 }}%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
             </span>
         </div>
     </div>
     <div class="col mx-2" style="background-color: thistle; height: 10rem; border-radius:1rem">
         <div class="row my-2" style="background-color: plum; height: 1.5rem; border-radius:1rem">
             <div class="text-center">
-                < 책임회피 B형 >
+                {{ label1 }}
             </div>
         </div>
         <div>
-            북한군 피격 공무원 유족 "직접 챙기겠다는 대통령 약속 잊었나"
+            {{ sen1 }}<br>
         </div>
         <div class="mb-2">
             <span data-view-component="true" class="Progress">
-                <span style="background-color:#3572A5 !important;;width: 0.02%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#e34c26 !important;;width: 99.93%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#f1e05a !important;;width: 0.05%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#3572A5 !important;;width: {{ pred100 }}%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#e34c26 !important;;width: {{ pred101 }}%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#f1e05a !important;;width: {{ pred102 }}%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
             </span>
         </div>
     </div>
     <div class="col mx-2" style="background-color: thistle; height: 10rem; border-radius:1rem">
         <div class="row my-2" style="background-color: plum; height: 1.5rem; border-radius:1rem">
             <div class="text-center">
-                < 선정성 C형 >
+                {{ label2 }}
             </div>
         </div>
         <div>
-            홍수 피해 입었지만 대박 난 태국 식당 "물 튀어도 좋아"
+            {{ sen2 }}<br>
+
         </div>
         <div class="mb-2">
             <span data-view-component="true" class="Progress">
-                <span style="background-color:#3572A5 !important;;width: 0.03%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#e34c26 !important;;width: 0.02%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#f1e05a !important;;width: 99.95%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#3572A5 !important;;width: {{ pred200 }}%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#e34c26 !important;;width: {{ pred201 }}%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#f1e05a !important;;width: {{ pred202 }}%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
             </span>
         </div>
     </div>
@@ -100,68 +101,68 @@
     <div class="col mx-2" style="background-color: thistle; height: 10rem; border-radius:1rem">
         <div class="row my-2" style="background-color: plum; height: 1.5rem; border-radius:1rem">
             <div class="text-center">
-                < 판단유보 A형 >
+                {{ label3 }}
             </div>
         </div>
         <div>
-            "대포통장 발급해 거래하라" ... 빗썸, 외국 고객에 불법거래 안내문 논란
+            {{ sen3 }}
         </div>
         <div class="mb-2">
             <span data-view-component="true" class="Progress">
-                <span style="background-color:#3572A5 !important;;width: 98.23%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#e34c26 !important;;width: 0.04%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#f1e05a !important;;width: 1.73%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#3572A5 !important;;width: {{ pred300 }}%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#e34c26 !important;;width: {{ pred301 }}%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#f1e05a !important;;width: {{ pred302 }}%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
             </span>
         </div>
     </div>
     <div class="col mx-2" style="background-color: thistle; height: 10rem; border-radius:1rem">
         <div class="row my-2" style="background-color: plum; height: 1.5rem; border-radius:1rem">
             <div class="text-center">
-                < 판단유보 A형 >
+                {{ label4 }}
             </div>
         </div>
         <div>
-            경찰, 유동규 휴대전화 하루만에 확보했다…"인근 주민이 습득"
+            {{ sen4 }}
         </div>
         <div class="mb-2">
             <span data-view-component="true" class="Progress">
-                <span style="background-color:#3572A5 !important;;width: 64.67%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#e34c26 !important;;width: 35.14%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#f1e05a !important;;width: 0.19%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#3572A5 !important;;width: {{ pred400 }}%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#e34c26 !important;;width: {{ pred401 }}%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#f1e05a !important;;width: {{ pred402 }}%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
             </span>
         </div>
     </div>
     <div class="col mx-2" style="background-color: thistle; height: 10rem; border-radius:1rem">
         <div class="row my-2" style="background-color: plum; height: 1.5rem; border-radius:1rem">
             <div class="text-center">
-                < 책임회피 B형 >
+                {{ label5 }}
             </div>
         </div>
         <div>
-            정청래 "원희룡, 4등이라도 하니 눈에 뵈는게 없나...공부나 더해라"
+            {{ sen5 }}
         </div>
         <div class="mb-2">
             <span data-view-component="true" class="Progress">
-                <span style="background-color:#3572A5 !important;;width: 0.93%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#e34c26 !important;;width: 78.68%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#f1e05a !important;;width: 20.39%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#3572A5 !important;;width: {{ pred500 }}%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#e34c26 !important;;width: {{ pred501 }}%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#f1e05a !important;;width: {{ pred502 }}%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
             </span>
         </div>
     </div>
     <div class="col mx-2" style="background-color: thistle; height: 10rem; border-radius:1rem">
         <div class="row my-2" style="background-color: plum; height: 1.5rem; border-radius:1rem">
             <div class="text-center">
-                < 선정성 C형 >
+                {{ label6 }}
             </div>
         </div>
         <div>
-            성추행 피해 후 사직·숨진 직원에 국세청장 "유감" 표명
+            {{ sen6 }}
         </div>
         <div class="mb-2">
             <span data-view-component="true" class="Progress">
-                <span style="background-color:#3572A5 !important;;width: 18.18%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#e34c26 !important;;width: 1.13%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
-                <span style="background-color:#f1e05a !important;;width: 80.69%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#3572A5 !important;;width: {{ pred600 }}%;" itemprop="keywords" aria-label="A유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#e34c26 !important;;width: {{ pred601 }}%;" itemprop="keywords" aria-label="B유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
+                <span style="background-color:#f1e05a !important;;width: {{ pred602 }}%;" itemprop="keywords" aria-label="C유형" data-view-component="true" class="Progress-item color-bg-success-inverse"></span>
             </span>
         </div>
     </div>

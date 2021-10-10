@@ -14,22 +14,22 @@ from bs4 import BeautifulSoup as soup
 import time
 import datetime
 
+from saved_model import predict
+from todaylist import today_list
+
 cwd = os.getcwd()
 
-def News_category():
+def News_category(**temp):
     today = datetime.datetime.now()
     yesterday = today - datetime.timedelta(1)
     yesterday = yesterday.strftime("%Y%m%d")
 
-    t = time.time()
-    today = time.strftime("%Y-%m-%d", time.gmtime(t))
-
     yesterday = yesterday[:4] + '-' + yesterday[4:6] + '-' + yesterday[6:]
-    date1 = str(int(yesterday[:4] + yesterday[5:7] + yesterday[8:]) - 1)
+    date1 = str(int(yesterday[:4] + yesterday[5:7] + yesterday[8:]) + 1)
+    today = date1[:4] + '-' + date1[4:6] + '-' + date1[6:]
+
     category = ["정치", "경제", "사회", "국제", "문화", "스포츠", "IT_과학",""]
     per_res = {}
-
-
 
     my_key = "a19a4199-9fe3-4dff-90ed-6512bb359f2b"
 
@@ -79,7 +79,6 @@ def News_category():
         per = len(sen_res) / len(res_title)
 
         per_res[category[i]]=str(np.round((per*100),1))+'%'
-        # print("{} {} 뉴스에 {}%의 비율로 따옴표가 쓰였습니다.".format(today, category[i], np.round(per * 100, 2)))
 
     politics = per_res['정치']
     economy = per_res['경제']
@@ -103,18 +102,23 @@ def search_selenium(search_name):
     # img_src = img.get("src")
 
     browser.implicitly_wait(2)
-    image = browser.find_elements_by_tag_name("img")[0]
+    image = browser.find_elements_by_tag_name("img")[41]
     image.screenshot(cwd + '\\static\\img\\top.jpg')
     image_loc = (cwd + '\\static\\img\\top.jpg')
     browser.quit()
     return image_loc
 
-def weekly_keyword():
-    t = time.time()
-    today = time.strftime("%Y-%m-%d", time.gmtime(t))
-    date1 = str(int(today[:4]+today[5:7]+today[8:]) - 7)
+def weekly_keyword(**temp):
+    today = datetime.datetime.now()
+    yesterday = today - datetime.timedelta(1)
+    yesterday = yesterday.strftime("%Y%m%d")
+
+    yesterday = yesterday[:4] + '-' + yesterday[4:6] + '-' + yesterday[6:]
+    date1 = str(int(yesterday[:4] + yesterday[5:7] + yesterday[8:]) - 7)
     lastday = date1[:4] + '-' + date1[4:6] + '-' + date1[6:]
-    date = today[:4]+'년'+today[5:7]+'월'+today[8:]+'일'
+
+    date = yesterday[:4]+'년'+yesterday[5:7]+'월'+yesterday[8:]+'일'
+
     my_key = "a19a4199-9fe3-4dff-90ed-6512bb359f2b"
 
     result_url = 'http://tools.kinds.or.kr:8888/search/news'
@@ -125,7 +129,7 @@ def weekly_keyword():
             "query": "",
             "published_at": {
                 "from": lastday,
-                "until": today
+                "until": yesterday
             },
             "provider": [""],
             "category": [""],
@@ -219,6 +223,23 @@ def weekly_keyword():
     im_loc = search_selenium(top)
 
     return [top,im_loc,date]
+def pred():
+    list_a = []
+    list_b = []
+    list_c = []
+    sen_res = today_list()
+
+    for sen in sen_res:
+        if np.argmax(predict(sen)[0]) == 0:
+            list_a.append(sen)
+        elif np.argmax(predict(sen)[0]) == 1:
+            list_b.append(sen)
+        elif np.argmax(predict(sen)[0]) == 2:
+            list_c.append(sen)
+
+        if min(len(list_a) , len(list_b), len(list_c) ) ==3 :
+            break
+    return [list_a,list_b,list_c]
 
 class BasicTemplateView(TemplateView):
     template_name = 'mainapp/base.html'
@@ -226,8 +247,7 @@ class BasicTemplateView(TemplateView):
 
 
     def get(self, request, *args, **kwargs):
-        # kwargs['test'] = News_data()[0]
-        # kwargs['date'] = News_data()[1]
+
         kwargs['politics'] = News_category()[0]
         kwargs['economy'] = News_category()[1]
         kwargs['social'] = News_category()[2]
@@ -236,9 +256,17 @@ class BasicTemplateView(TemplateView):
         kwargs['sports'] = News_category()[5]
         kwargs['science'] = News_category()[6]
         kwargs['total'] = News_category()[7]
-
         kwargs['top'] = weekly_keyword()[0]
         kwargs['image_loc'] = weekly_keyword()[1]
-        kwargs['today'] = weekly_keyword()[2]
+        kwargs['yesterday'] = weekly_keyword()[2]
+        kwargs['a0'] = pred()[0][0]
+        kwargs['a1'] = pred()[0][1]
+        kwargs['a2'] = pred()[0][2]
+        kwargs['b0'] = pred()[1][0]
+        kwargs['b1'] = pred()[1][1]
+        kwargs['b2'] = pred()[1][2]
+        kwargs['c0'] = pred()[2][0]
+        kwargs['c1'] = pred()[2][1]
+        kwargs['c2'] = pred()[2][2]
         return super().get(request, *args, **kwargs)
 

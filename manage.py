@@ -3,6 +3,7 @@
 import os
 import sys
 
+from bbqqClassifer import bbqqClassifer
 
 def main():
     """Run administrative tasks."""

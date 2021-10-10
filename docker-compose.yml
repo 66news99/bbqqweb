@@ -7,19 +7,21 @@ services:
     ports:
       - 80:80
     networks:
-      - jewon1016_network
+      - bbqq_network
     volumes:
       - /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf
-      - jewon1016_static:/data/static/
-      - jewon1016_media:/data/media/
+      - bbqq_static:/data/static/
+      - bbqq_media:/data/media/
+    secrets:
+      - NGINX_AUTH
 
   django:
-    image: jewon1016_django:5
+    image: bbqq_django:1
     networks:
-      - jewon1016_network
+      - bbqq_network
     volumes:
-      - jewon1016_static:/home/gis_3ban_1/staticfiles/
-      - jewon1016_media:/home/gis_3ban_1/media/
+      - bbqq_static:/home/gis_3ban_1/staticfiles/
+      - bbqq_media:/home/gis_3ban_1/media/
     secrets:
       - DJANGO_SECRET_KEY
       - MARIADB_USER
@@ -28,9 +30,9 @@ services:
   mariadb:
     image: mariadb:10.5
     networks:
-      - jewon1016_network
+      - bbqq_network
     volumes:
-      - jewon1016_mariadb:/var/lib/mysql
+      - bbqq_mariadb:/var/lib/mysql
     secrets:
       - MARIADB_ROOT_PASSWORD
       - MARIADB_USER
@@ -42,12 +44,12 @@ services:
       MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_ROOT_PASSWORD
 
 networks:
-  jewon1016_network:
+  bbqq_network:
 
 volumes:
-  jewon1016_static:
-  jewon1016_media:
-  jewon1016_mariadb:
+  bbqq_static:
+  bbqq_media:
+  bbqq_mariadb:
 
 secrets:
   DJANGO_SECRET_KEY:

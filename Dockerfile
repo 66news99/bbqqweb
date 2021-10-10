@@ -6,7 +6,7 @@ RUN echo "bbqq"
 
 RUN git clone https://github.com/hale-in/bbqqweb
 
-WORKDIR /home/gis_3ban_1/
+WORKDIR /home/bbqqweb/
 
 #RUN echo "SECRET_KEY=django-insecure-y*7(@vu)z_q$qmc5tee=dbuo$5f(!$rf@n)vsgfkipumfu(jp+" > .env
 

@@ -2,9 +2,9 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "asadsadkf"
+RUN echo "bbqq"
 
-RUN git clone -b 8/11_3ban_class_commit_1 https://github.com/MrRyuwon/gis_3ban_1.git
+RUN git clone https://github.com/hale-in/bbqqweb
 
 WORKDIR /home/gis_3ban_1/
 

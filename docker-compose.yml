@@ -16,7 +16,7 @@ services:
       - NGINX_AUTH
 
   django:
-    image: bbqq_django:4
+    image: bbqq_django:1
     networks:
       - bbqq_network
     volumes:

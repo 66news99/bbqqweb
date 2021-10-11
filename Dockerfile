@@ -1,8 +1,8 @@
-FROM python:3.8-stretch
+FROM python:3.8
 
 WORKDIR /home/
 
-RUN echo "bbqqweb1011223344"
+RUN echo "bbqqweb10112233445566778899"
 
 RUN git clone https://github.com/hale-in/bbqqweb
 
@@ -10,16 +10,11 @@ WORKDIR /home/bbqqweb/
 
 #RUN echo "SECRET_KEY=django-insecure-y*7(@vu)z_q$qmc5tee=bbqqqutation6699" > .env
 
-RUN pip install --upgrade pip
-
-RUN pip install requests==2.20.0
-
 RUN pip install -r requirements.txt
 
 RUN pip install gunicorn
 
 RUN pip install mysqlclient
-
 
 EXPOSE 8000
 
